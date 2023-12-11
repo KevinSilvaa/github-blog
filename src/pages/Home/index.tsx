@@ -8,10 +8,10 @@ import { PostCard } from './components/PostCard'
 // Strategic Imports
 import { api } from '../../lib/api'
 import { useCallback, useEffect, useState } from 'react'
-import { ProfileCard, UserProps } from './components/ProfileCard'
+import { ProfileCard } from './components/ProfileCard'
 
-export interface PostProps {
-  user: UserProps[];
+export interface PostsProps {
+  user: UserProps;
   length: number;
   number: number;
   title: string;
@@ -21,8 +21,12 @@ export interface PostProps {
   comments: number;
 }
 
+interface UserProps {
+  login: string;
+}
+
 export function Home() {
-  const [posts, setPosts] = useState<PostProps[]>([]);
+  const [posts, setPosts] = useState<PostsProps[]>([]);
 
   const fetchPosts = useCallback(async (query?: string) => {
     const response = await api.get(`search/issues?q=${query ? query + "%20" : ""}repo:KevinSilvaa/github-blog`)

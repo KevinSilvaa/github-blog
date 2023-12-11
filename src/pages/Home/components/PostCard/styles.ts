@@ -8,6 +8,7 @@ export const PostCardContainer = styled.div`
   background: ${({ theme }) => theme["base-post"]};
   max-width: 416px;
   border-radius: 10px;
+  cursor: pointer;
 
   p {
     display: -webkit-box;

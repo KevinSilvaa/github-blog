@@ -33,7 +33,7 @@ export function ProfileCard() {
   });
   
   const fetchUser = useCallback(async () => {
-    const response = await api.get("/users/kevinsilvaa")
+    const response = await api.get("/users/KevinSilvaa")
 
     const {
       name,

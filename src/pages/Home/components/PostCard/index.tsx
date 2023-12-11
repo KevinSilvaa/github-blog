@@ -2,12 +2,12 @@
 import { PostCardContainer, PostCardHeading } from "./styles";
 
 // Strategic Imports
-import { PostProps } from "../..";
+import { PostsProps } from "../..";
 import { DateFormatter } from "../../../../utils/DateFormatter";
 import { useNavigate } from "react-router-dom";
 
 interface PostCardProps {
-  data: PostProps
+  data: PostsProps
 }
 
 export function PostCard({ data }: PostCardProps) {
@@ -21,7 +21,7 @@ export function PostCard({ data }: PostCardProps) {
     <PostCardContainer onClick={handleNavigatePostDetails}>
       <PostCardHeading>
         <h2>{data.title}</h2>
-        <span>{DateFormatter(data.created_at)}</span>
+        <span>{data.created_at && DateFormatter(data.created_at)}</span>
       </PostCardHeading>
 
       <p>{data.body}</p>
