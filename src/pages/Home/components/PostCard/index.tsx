@@ -1,14 +1,30 @@
 // Styling Imports
-import { PostProps } from "../..";
-import { PostCardContainer } from "./styles";
+import { PostCardContainer, PostCardHeading } from "./styles";
 
 // Strategic Imports
+import { PostProps } from "../..";
+import { DateFormatter } from "../../../../utils/DateFormatter";
+import { useNavigate } from "react-router-dom";
 
-export function PostCard({ data }: PostProps) {
+interface PostCardProps {
+  data: PostProps
+}
+
+export function PostCard({ data }: PostCardProps) {
+  const navigate = useNavigate();
+
+  function handleNavigatePostDetails() {
+    navigate(`/post/${data.number}`);
+  }
 
   return (
-    <PostCardContainer>
-      <h1>{data.title}</h1>
+    <PostCardContainer onClick={handleNavigatePostDetails}>
+      <PostCardHeading>
+        <h2>{data.title}</h2>
+        <span>{DateFormatter(data.created_at)}</span>
+      </PostCardHeading>
+
+      <p>{data.body}</p>
     </PostCardContainer>
   );
 }

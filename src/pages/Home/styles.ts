@@ -12,6 +12,9 @@ export const PostsSection = styled.section`
   gap: 0.75rem;
 `;
 
-export const PostCardContainer = styled.div`
-
+export const PostsCardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2.25rem;
 `;

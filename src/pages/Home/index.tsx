@@ -1,5 +1,5 @@
 // Styling Imports
-import { HomeContainer, PostsSection, PostCardContainer } from './styles'
+import { HomeContainer, PostsSection, PostsCardContainer } from './styles'
 
 // Components Imports
 import { SearchForm } from './components/SearchForm'
@@ -7,7 +7,7 @@ import { PostCard } from './components/PostCard'
 
 // Strategic Imports
 import { api } from '../../lib/api'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { ProfileCard, UserProps } from './components/ProfileCard'
 
 export interface PostProps {
@@ -30,6 +30,10 @@ export function Home() {
     setPosts(response.data.items)
   }, [])
 
+  useEffect(() => {
+    fetchPosts()
+  }, [fetchPosts])
+
   const postsLength = posts.length;
 
   let numberOfPostsText: string
@@ -50,7 +54,7 @@ export function Home() {
           numberOfPostsText={numberOfPostsText}
         />
 
-        <PostCardContainer>
+        <PostsCardContainer>
           {postsLength > 0 && (
             posts.map(post => (
               <PostCard
@@ -59,7 +63,7 @@ export function Home() {
               />
             ))
           )}
-        </PostCardContainer>
+        </PostsCardContainer>
       </PostsSection>
     </HomeContainer>
   )
