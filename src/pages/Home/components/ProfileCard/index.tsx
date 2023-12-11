@@ -1,43 +1,53 @@
 // Styling Imports
-import { ProfileCardContainer, ProfileInfos, ProfileInfosHeader, ProfileInfosFooter } from "./styles";
+import {
+  ProfileCardContainer,
+  ProfileInfos,
+  ProfileInfosHeader,
+  ProfileInfosFooter,
+} from './styles'
 
 // Strategic Imports
-import { useState, useEffect, useCallback } from "react";
-import { api } from "../../../../lib/api";
-import { Link } from "react-router-dom";
+import { useState, useEffect, useCallback } from 'react'
+import { api } from '../../../../lib/api'
+import { Link } from 'react-router-dom'
 
 // Icons Imports
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpRightFromSquare, faLocationDot, faUserGroup } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowUpRightFromSquare,
+  faLocationDot,
+  faUserGroup,
+} from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 export interface UserProps {
-  name: string;
-  avatar_url: string;
-  html_url: string;
-  bio: string;
-  login: string;
-  location: string;
-  followers: number;
+  name: string
+  avatar_url: string
+  html_url: string
+  bio: string
+  login: string
+  location: string
+  followers: number
 }
 
 export function ProfileCard() {
   const [user, setUser] = useState<UserProps>({
-    name: "",
-    avatar_url: "",
-    html_url: "",
-    bio: "",
-    login: "",
-    location: "",
+    name: '',
+    avatar_url: '',
+    html_url: '',
+    bio: '',
+    login: '',
+    location: '',
     followers: 0,
-  });
-  
+  })
+
   const fetchUser = useCallback(async () => {
-    const response = await api.get("/users/KevinSilvaa")
+    const response = await api.get('/users/KevinSilvaa')
 
     const {
       name,
       avatar_url: avatarURL,
+      // eslint-disable-next-line camelcase
       html_url,
       bio,
       login,
@@ -48,6 +58,7 @@ export function ProfileCard() {
     const filteredData = {
       name,
       avatar_url: avatarURL,
+      // eslint-disable-next-line camelcase
       html_url,
       bio,
       login,
@@ -64,8 +75,10 @@ export function ProfileCard() {
 
   return (
     <ProfileCardContainer>
-
-      <img src={user.avatar_url} alt="Foto do perfil de Kevin SIlvaa No Github" />
+      <img
+        src={user.avatar_url}
+        alt="Foto do perfil de Kevin SIlvaa No Github"
+      />
 
       <ProfileInfos>
         <ProfileInfosHeader>
@@ -92,10 +105,13 @@ export function ProfileCard() {
 
           <div>
             <FontAwesomeIcon icon={faUserGroup} />
-            <span>{user.followers} {user.followers === 1 ? "seguidor" : "seguidores"}</span>
+            <span>
+              {user.followers}{' '}
+              {user.followers === 1 ? 'seguidor' : 'seguidores'}
+            </span>
           </div>
         </ProfileInfosFooter>
       </ProfileInfos>
     </ProfileCardContainer>
-  );
+  )
 }

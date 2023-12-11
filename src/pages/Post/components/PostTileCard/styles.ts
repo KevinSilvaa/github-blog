@@ -1,16 +1,16 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const PostTitleCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   padding: 2rem;
-  background: ${({ theme }) => theme["base-profile"]};
-  box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.20);
+  background: ${({ theme }) => theme['base-profile']};
+  box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   width: 100%;
   margin-top: -5.5rem;
-`;
+`
 
 export const PostTitleCardLinks = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ export const PostTitleCardLinks = styled.div`
     font-size: 0.75rem;
     font-weight: 700;
     cursor: pointer;
-    color: ${({ theme }) => theme["blue"]};
+    color: ${({ theme }) => theme.blue};
   }
 
   a {
@@ -39,9 +39,9 @@ export const PostTitleCardLinks = styled.div`
     text-transform: uppercase;
     font-size: 0.75rem;
     font-weight: 700;
-    color: ${({ theme }) => theme["blue"]};
+    color: ${({ theme }) => theme.blue};
   }
-`;
+`
 
 export const PostTitleCardInfos = styled.div`
   display: flex;
@@ -52,12 +52,12 @@ export const PostTitleCardInfos = styled.div`
     font-size: 1.5rem;
     line-height: 1.3;
   }
-`;
+`
 
 export const PostTitleCardExtraInfos = styled.div`
   display: flex;
   gap: 2rem;
-  
+
   div {
     display: flex;
     align-items: center;
@@ -65,12 +65,12 @@ export const PostTitleCardExtraInfos = styled.div`
 
     svg {
       font-size: 1.125rem;
-      color: ${({ theme }) => theme["base-label"]};
+      color: ${({ theme }) => theme['base-label']};
     }
 
     span {
-      color: ${({ theme }) => theme["base-span"]};
+      color: ${({ theme }) => theme['base-span']};
       line-height: 1.6;
     }
   }
-`;
+`

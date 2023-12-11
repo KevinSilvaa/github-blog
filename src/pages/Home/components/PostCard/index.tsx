@@ -1,20 +1,20 @@
 // Styling Imports
-import { PostCardContainer, PostCardHeading } from "./styles";
+import { PostCardContainer, PostCardHeading } from './styles'
 
 // Strategic Imports
-import { PostsProps } from "../..";
-import { DateFormatter } from "../../../../utils/DateFormatter";
-import { useNavigate } from "react-router-dom";
+import { PostsProps } from '../..'
+import { DateFormatter } from '../../../../utils/DateFormatter'
+import { useNavigate } from 'react-router-dom'
 
 interface PostCardProps {
   data: PostsProps
 }
 
 export function PostCard({ data }: PostCardProps) {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   function handleNavigatePostDetails() {
-    navigate(`/post/${data.number}`);
+    navigate(`/post/${data.number}`)
   }
 
   return (
@@ -26,5 +26,5 @@ export function PostCard({ data }: PostCardProps) {
 
       <p>{data.body}</p>
     </PostCardContainer>
-  );
+  )
 }

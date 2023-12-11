@@ -1,22 +1,31 @@
 // Styling Imports
-import { PostTitleCardContainer, PostTitleCardLinks, PostTitleCardInfos, PostTitleCardExtraInfos } from "./styles";
+import {
+  PostTitleCardContainer,
+  PostTitleCardLinks,
+  PostTitleCardInfos,
+  PostTitleCardExtraInfos,
+} from './styles'
 
 // Strategic Imports
-import { PostDataProps } from "../../";
-import { Link, useNavigate } from "react-router-dom";
+import { PostDataProps } from '../../'
+import { Link, useNavigate } from 'react-router-dom'
 
 // Icons Imports
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faArrowUpRightFromSquare, faCalendarDay, faComment } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { DateFormatter } from "../../../../utils/DateFormatter";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faChevronLeft,
+  faArrowUpRightFromSquare,
+  faCalendarDay,
+  faComment,
+} from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { DateFormatter } from '../../../../utils/DateFormatter'
 
 export function PostTitleCard({ data }: PostDataProps) {
-
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   function handleBack() {
-    navigate(-1);
+    navigate(-1)
   }
 
   return (
@@ -49,10 +58,13 @@ export function PostTitleCard({ data }: PostDataProps) {
 
           <div>
             <FontAwesomeIcon icon={faComment} />
-            <span>{data.comments} {data.comments === 1 ? "comentário" : "comentários"}</span>
+            <span>
+              {data.comments}{' '}
+              {data.comments === 1 ? 'comentário' : 'comentários'}
+            </span>
           </div>
         </PostTitleCardExtraInfos>
       </PostTitleCardInfos>
-    </PostTitleCardContainer >
-  );
+    </PostTitleCardContainer>
+  )
 }

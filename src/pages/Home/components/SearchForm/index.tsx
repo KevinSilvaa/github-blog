@@ -1,10 +1,14 @@
 // Styling Imports
-import { SearchFormContainer, SearchFormHeading, SearchFormInput } from "./styles";
+import {
+  SearchFormContainer,
+  SearchFormHeading,
+  SearchFormInput,
+} from './styles'
 
 // Strategic Imports
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 const searchFormSchema = z.object({
   query: z.string(),
@@ -13,12 +17,16 @@ const searchFormSchema = z.object({
 type SearchFormInput = z.infer<typeof searchFormSchema>
 
 interface SearchFormInputProps {
-  postsLength: number;
-  numberOfPostsText: string;
-  fetchPosts: (query?: string) => Promise<void>;
+  postsLength: number
+  numberOfPostsText: string
+  fetchPosts: (query?: string) => Promise<void>
 }
 
-export function SearchForm({ postsLength, fetchPosts, numberOfPostsText }: SearchFormInputProps) {
+export function SearchForm({
+  postsLength,
+  fetchPosts,
+  numberOfPostsText,
+}: SearchFormInputProps) {
   const {
     register,
     handleSubmit,
@@ -28,7 +36,7 @@ export function SearchForm({ postsLength, fetchPosts, numberOfPostsText }: Searc
   })
 
   async function handleSearch(data: SearchFormInput) {
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    await new Promise((resolve) => setTimeout(resolve, 2000))
     fetchPosts(data.query)
   }
 
@@ -36,16 +44,17 @@ export function SearchForm({ postsLength, fetchPosts, numberOfPostsText }: Searc
     <SearchFormContainer onSubmit={handleSubmit(handleSearch)}>
       <SearchFormHeading>
         <h2>Publicações</h2>
-        <span>{postsLength} {numberOfPostsText}</span>
+        <span>
+          {postsLength} {numberOfPostsText}
+        </span>
       </SearchFormHeading>
 
       <SearchFormInput
         type="text"
         placeholder="Buscar conteúdo"
-        {...register("query")}
+        {...register('query')}
         disabled={isSubmitting}
       />
-
     </SearchFormContainer>
-  );
+  )
 }

@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const PostContentCardContainer = styled.section`
   display: flex;
   flex-direction: column;
-`;
+`
 
 export const PostContentCardDetails = styled.div`
   display: flex;
@@ -12,15 +12,15 @@ export const PostContentCardDetails = styled.div`
   padding: 0 2rem;
   max-height: 26.375rem;
   overflow: auto;
-  color: ${({ theme }) => theme["base-text"]};
+  color: ${({ theme }) => theme['base-text']};
   line-height: 1.6;
 
   a {
-    color: ${({ theme }) => theme["blue"]};
+    color: ${({ theme }) => theme.blue};
   }
 
   pre {
     background: #333;
-    color: ${({ theme }) => theme["base-title"]};
+    color: ${({ theme }) => theme['base-title']};
   }
-`;
+`

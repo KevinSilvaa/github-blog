@@ -21,13 +21,15 @@ export function Post() {
   const { id } = useParams()
 
   const fetchPosts = useCallback(async () => {
-    const response = await api.get(`/repos/KevinSilvaa/github-blog/issues/${id}`)
+    const response = await api.get(
+      `/repos/KevinSilvaa/github-blog/issues/${id}`,
+    )
 
-    setPostData(response.data);
+    setPostData(response.data)
   }, [id])
 
   useEffect(() => {
-    fetchPosts();
+    fetchPosts()
   }, [fetchPosts])
 
   return (

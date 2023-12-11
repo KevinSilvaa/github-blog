@@ -10,5 +10,5 @@ export const defaultTheme = {
   'base-background': '#071422',
   'base-input': '#040F1A',
 
-  'blue': '#3294F8',
+  blue: '#3294F8',
 } as const

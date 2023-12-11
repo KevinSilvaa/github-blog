@@ -9,27 +9,30 @@ import { PostCard } from './components/PostCard'
 import { api } from '../../lib/api'
 import { useCallback, useEffect, useState } from 'react'
 import { ProfileCard } from './components/ProfileCard'
-
-export interface PostsProps {
-  user: UserProps;
-  length: number;
-  number: number;
-  title: string;
-  body: string;
-  created_at: string;
-  html_url: string;
-  comments: number;
+interface UserProps {
+  login: string
 }
 
-interface UserProps {
-  login: string;
+export interface PostsProps {
+  user: UserProps
+  length: number
+  number: number
+  title: string
+  body: string
+  created_at: string
+  html_url: string
+  comments: number
 }
 
 export function Home() {
-  const [posts, setPosts] = useState<PostsProps[]>([]);
+  const [posts, setPosts] = useState<PostsProps[]>([])
 
   const fetchPosts = useCallback(async (query?: string) => {
-    const response = await api.get(`search/issues?q=${query ? query + "%20" : ""}repo:KevinSilvaa/github-blog`)
+    const response = await api.get(
+      `search/issues?q=${
+        query ? query + '%20' : ''
+      }repo:KevinSilvaa/github-blog`,
+    )
 
     setPosts(response.data.items)
   }, [])
@@ -38,13 +41,13 @@ export function Home() {
     fetchPosts()
   }, [fetchPosts])
 
-  const postsLength = posts.length;
+  const postsLength = posts.length
 
   let numberOfPostsText: string
-  if (postsLength > 1) {
-    numberOfPostsText = "publicação"
+  if (posts.length === 1) {
+    numberOfPostsText = 'publicação'
   } else {
-    numberOfPostsText = "publicações"
+    numberOfPostsText = 'publicações'
   }
 
   return (
@@ -59,14 +62,8 @@ export function Home() {
         />
 
         <PostsCardContainer>
-          {postsLength > 0 && (
-            posts.map(post => (
-              <PostCard
-                key={post.number}
-                data={post}
-              />
-            ))
-          )}
+          {postsLength > 0 &&
+            posts.map((post) => <PostCard key={post.number} data={post} />)}
         </PostsCardContainer>
       </PostsSection>
     </HomeContainer>
