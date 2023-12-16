@@ -4,8 +4,6 @@
   ![Github Blog Home](https://github.com/KevinSilvaa/github-blog/assets/143517496/15b8a637-5331-405f-a1fe-6ba0c76346c7)
 </div>
 
-
-
 <h3 align="center">Projeto realizado durante a trilha para especialização em ReactJS da Rocketseat</h3> <br><br>
 
 <div align="center">
@@ -38,7 +36,6 @@ os possíveis erros do código.
   - `React Router Dom`; Utilizado para interagir com a DOM, principalmente com a navegação entre páginas.
   - `Font Awesome`; Utilizado para importar ícones de uma maneira mais simples.
   - `Date-fns`; Utilizado para formatar as datas utilizandas dentro do projeto.
-  
 
 &nbsp;
 &nbsp;
