@@ -8,6 +8,13 @@
 
 <h3 align="center">Projeto realizado durante a trilha para especialização em ReactJS da Rocketseat</h3> <br><br>
 
+<div align="center">
+  <a href="https://github-blog-kevinsilvaa.vercel.app" target="_blank">Veja o resultado final clicando aqui</a>
+</div>
+
+&nbsp;
+&nbsp;
+
 # ℹ️ Detalhes do projeto
 
 O **Github Blog** é uma aplicação para listar todas as *issues* de um determinado repositório, .<br>
