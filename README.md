@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Github Blog &nbsp; &nbsp; <img src="https://github.com/KevinSilvaa/github-blog/assets/143517496/54a36d67-935c-47e6-9ef2-8cf7b8d83473" /></h1>
+  <h1>Github Blog</h1>
 
   ![Github Blog Home](https://github.com/KevinSilvaa/github-blog/assets/143517496/15b8a637-5331-405f-a1fe-6ba0c76346c7)
 </div>
